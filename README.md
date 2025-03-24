@@ -4,6 +4,38 @@
 This project extracts key details from news articles related to a company, performs sentiment analysis, and generates a Hindi Text-to-Speech (TTS) output. It leverages **BeautifulSoup** for web scraping, **machine learning models** for sentiment analysis, and an **open-source TTS engine** for audio narration. The **Streamlit** framework is used for the user interface, and the application is deployed on **Hugging Face Spaces**.
 
 ---
+## 1. News Summarization Model  
+**Purpose:** Extracts essential information from lengthy news articles.  
+
+### Models/Methods Used:  
+- **Hugging Face Transformers (Abstractive Summarization)**  
+  - Likely using `facebook/bart-large-cnn` or `t5-small` to generate summaries in a human-like way.  
+- **Sumy (Extractive Summarization)**  
+  - Uses algorithms like LexRank and Luhn to select key sentences from the article.  
+- **NLTK (Text Processing)**  
+  - Helps in tokenizing, sentence segmentation, and filtering unnecessary parts of the news articles.  
+
+---
+
+## 2. Sentiment Analysis Model  
+**Purpose:** Determines if the news article has a positive, negative, or neutral sentiment.  
+
+### Models/Methods Used:  
+- **Hugging Face Transformers**  
+  - Likely using a model like `nlptown/bert-base-multilingual-uncased-sentiment` or `distilbert-base-uncased-finetuned-sst-2-english`.  
+- **NLTK’s VADER (Valence Aware Dictionary and sEntiment Reasoner)**  
+  - Good for analyzing short texts and headlines.  
+
+---
+
+## 3. Text-to-Speech (TTS) Model  
+**Purpose:** Converts the summarized news into Hindi speech.  
+
+### Models/Methods Used:  
+- **Google Text-to-Speech (gTTS)**  
+  - An easy-to-use API for generating Hindi audio.  
+- **Pyttsx3 (Optional)**  
+  - If offline TTS is needed, `pyttsx3` can be used.  
 
 ## **Key Features**
 
