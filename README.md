@@ -170,7 +170,84 @@ The application is deployed on **Hugging Face Spaces** for public access.
 5. Click **Deploy** and wait for the app to go live.
 
 ---
+### How to Access the API  
+1. Start the API server using Uvicorn:  
+   ```bash
+   uvicorn api:app --host 0.0.0.0 --port 8000 --reload
+Access the server at:
 
+http://0.0.0.0:8000
+
+# API Endpoints
+1. Summarization Endpoint
+Endpoint:
+
+[http](http://0.0.0.0:8000)
+GET /summarize/{company_name}
+Description: Fetches and summarizes news articles related to the specified company.
+
+Example Request:
+
+curl "http://0.0.0.0:8000/summarize/Google"
+
+Response Format:
+
+
+{
+  "company": "Google",
+  "summary": "Google has announced new AI features...",
+  "source": "https://example.com/news/google"
+}
+
+
+# 2. Sentiment Analysis Endpoint
+Endpoint:
+
+
+GET /analyze/{company_name}
+Description: Analyzes the sentiment of summarized news articles.
+
+Example Request:
+
+curl "http://0.0.0.0:8000/analyze/Google"
+
+
+Response Format:
+
+{
+  "company": "Google",
+  "sentiment": "Positive",
+  "confidence": 0.85
+}
+
+
+# 3. Text-to-Speech (TTS) Endpoint
+Endpoint:
+
+
+GET /tts/{company_name}
+Description: Converts the summarized news into Hindi speech and returns the audio file.
+
+Example Request:
+
+
+curl "http://0.0.0.0:8000/tts/Google" -o google_news.mp3
+Response: MP3 file containing the spoken news summary.
+
+API Usage (Third-Party APIs)
+The project integrates the following third-party APIs:
+
+Google Text-to-Speech (gTTS):
+
+Converts summarized text to Hindi speech and saves it as an MP3 file.
+
+Newspaper3k:
+
+Extracts and cleans text from online news articles.
+
+Hugging Face Transformers:
+
+Provides pre-trained models for summarization and sentiment analysis.
 
 ### **Steps to Contribute:**
 1. Fork the repository.
