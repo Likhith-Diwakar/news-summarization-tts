@@ -270,3 +270,20 @@ Provides pre-trained models for summarization and sentiment analysis.
 
 ---
 
+## Assumptions & Limitations
+
+### Assumptions
+- The news articles fetched using **Newspaper3k** are relevant to the provided company name.
+- The **summarization model** effectively captures the key points of an article without distorting the context.
+- **Sentiment analysis** is assumed to be accurate for general news articles but may not handle sarcasm or subtle biases well.
+- The **TTS model (gTTS)** provides clear and understandable Hindi speech output.
+- The API assumes a stable internet connection for fetching news articles and using Hugging Face models.
+
+### Limitations
+- **Language Support:** The system primarily works with **English news articles**, and Hindi TTS output may have pronunciation inconsistencies.
+- **Summarization Accuracy:** Extractive summarization (Sumy) may not always capture the intended meaning, while abstractive models (T5/BART) might generate minor inaccuracies.
+- **Sentiment Analysis Bias:** Pre-trained models may have biases depending on the dataset they were trained on.
+- **Dependency on External APIs:** Since we use **Newspaper3k**, **Hugging Face**, and **gTTS**, API downtime or rate limits could affect functionality.
+- **Processing Time:** The summarization and sentiment analysis models may take **longer** to process large volumes of news articles.
+
+
